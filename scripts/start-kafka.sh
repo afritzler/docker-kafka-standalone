@@ -14,9 +14,6 @@ if [ ! -z "$HELIOS_PORT_kafka" ]; then
     ADVERTISED_PORT=`echo $HELIOS_PORT_kafka | cut -d':' -f 2`
 fi
 
-if [ -e /var/run/docker.sock ]; then 
-    ADVERTISED_PORT=`extractPort.sh`		
-fi
 
 # Set the external host and port
 if [ ! -z "$ADVERTISED_HOST" ]; then

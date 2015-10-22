@@ -17,7 +17,7 @@ Run
 ---
 
 ```bash
-docker run -p 2181:2181 -p 9092 --env ADVERTISED_HOST="<dockerHostIP>" -v /var/run/docker.sock:/var/run/docker.sock --name kafka -it kafka
+docker run -p 2181:2181 -p 9092 -p 8085:8085 --name kafka -it kafka
 ```
 
 ```bash
@@ -29,4 +29,3 @@ kafka-console-producer.sh --broker-list $KAFKA --topic test
 export ZOOKEEPER=<dockerHostIP>:2181
 kafka-console-consumer.sh --zookeeper $ZOOKEEPER --topic test
 ```
-
